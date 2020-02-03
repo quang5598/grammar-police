@@ -1,0 +1,49 @@
+.span {
+	text-decoration: underline;
+}
+.span:hover{
+	background-color: red;
+}
+.textarea {
+	text-align: left;
+	height: 295px;
+	width: 100%;
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-family: "Times New Roman, Times, serif";
+	line-height: 1.6;
+	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.burn{
+	color: black;
+	font-size: 5em;
+	text-align: center;
+	font-family: "Brush Script MT";
+	  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}

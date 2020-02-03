@@ -1,0 +1,9 @@
+.textarea {
+	text-align: left;
+	height: 295px;
+	width: 100%;
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-family: "Times New Roman, Times, serif";
+	line-height: 1.6;
+}
