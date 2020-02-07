@@ -10,7 +10,6 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import CheckIcon from '@material-ui/icons/Check';
 import Tooltip from '@material-ui/core/Tooltip';
-import { SolarSystemLoading } from 'react-loadingg';
 
 class App extends React.Component {
   constructor(){
@@ -24,6 +23,9 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount(){
+    document.title='Grammar Police';
+  }
 // Display ErrorList component  
 errorList = () => {
   return (
@@ -169,12 +171,9 @@ textBox = () => {
 
         </div>
         :
-        !this.state.isLoading?
         <div className='wrapper main'>
         {this.errorList()}
         </div>
-        :
-        <SolarSystemLoading />
       }
 
        </Grid>
