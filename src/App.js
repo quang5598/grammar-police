@@ -10,6 +10,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import CheckIcon from '@material-ui/icons/Check';
 import Tooltip from '@material-ui/core/Tooltip';
+import { SolarSystemLoading } from 'react-loadingg';
 
 class App extends React.Component {
   constructor(){
@@ -19,6 +20,7 @@ class App extends React.Component {
       text:'',
       errorList: {},
       onInput: true,
+      isLoading: true,
     }
   }
 
@@ -71,6 +73,7 @@ textBox = () => {
   }
   // send data to the back-end server and then get the response from the grammarbot APi
   handleButtonSubmit = () => {
+    this.setState({isLoading: true})
       this.fetchAPI(this.state.textfield).then(errorList => {
       // Check if the server response with data
         if(errorList){
@@ -78,7 +81,7 @@ textBox = () => {
 
           this.setState({errorList: errorList,
                         text:this.state.textfield, 
-                        onInput: false})
+                        onInput: false,isLoading: false})
       } else {
         this.setState({onInput: true, text: this.state.textfield})
       }
@@ -159,15 +162,19 @@ textBox = () => {
       
       {
         this.state.onInput?
+        
         <div className='wrapper main2'>
+        
         {this.errorList()}
 
         </div>
-
         :
+        !this.state.isLoading?
         <div className='wrapper main'>
         {this.errorList()}
         </div>
+        :
+        <SolarSystemLoading />
       }
 
        </Grid>
@@ -176,7 +183,7 @@ textBox = () => {
       </Grid>
             <div style={{height:'150px'}}></div>
       <div style={{ backgroundColor:'#021b79'}}>
-      <Footer isLoading={this.state.isLoading}/></div>
+      <Footer /></div>
       
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-const Footer = ({isLoading})=>{
+const Footer = ()=>{
 	return(
 		<div className='br--left shadow-5 code white bold' style={{ paddingBottom:'20px'
 		}}>
