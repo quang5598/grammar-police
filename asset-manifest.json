@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/quang5598/grammar-police/static/css/main.95ad90e0.chunk.css",
+    "main.js": "/quang5598/grammar-police/static/js/main.41e6a256.chunk.js",
+    "main.js.map": "/quang5598/grammar-police/static/js/main.41e6a256.chunk.js.map",
+    "runtime-main.js": "/quang5598/grammar-police/static/js/runtime-main.6dd7cbd8.js",
+    "runtime-main.js.map": "/quang5598/grammar-police/static/js/runtime-main.6dd7cbd8.js.map",
+    "static/css/2.eb45ad44.chunk.css": "/quang5598/grammar-police/static/css/2.eb45ad44.chunk.css",
+    "static/js/2.915a023b.chunk.js": "/quang5598/grammar-police/static/js/2.915a023b.chunk.js",
+    "static/js/2.915a023b.chunk.js.map": "/quang5598/grammar-police/static/js/2.915a023b.chunk.js.map",
+    "index.html": "/quang5598/grammar-police/index.html",
+    "precache-manifest.a8f81a0d97a9d98c56c02f197acfd25e.js": "/quang5598/grammar-police/precache-manifest.a8f81a0d97a9d98c56c02f197acfd25e.js",
+    "service-worker.js": "/quang5598/grammar-police/service-worker.js",
+    "static/css/2.eb45ad44.chunk.css.map": "/quang5598/grammar-police/static/css/2.eb45ad44.chunk.css.map",
+    "static/css/main.95ad90e0.chunk.css.map": "/quang5598/grammar-police/static/css/main.95ad90e0.chunk.css.map",
+    "static/js/2.915a023b.chunk.js.LICENSE": "/quang5598/grammar-police/static/js/2.915a023b.chunk.js.LICENSE",
+    "static/media/icon.png": "/quang5598/grammar-police/static/media/icon.69ddbe02.png",
+    "static/media/image1.jpg": "/quang5598/grammar-police/static/media/image1.28686cfa.jpg",
+    "static/media/image2.jpg": "/quang5598/grammar-police/static/media/image2.091a1830.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6dd7cbd8.js",
+    "static/css/2.eb45ad44.chunk.css",
+    "static/js/2.915a023b.chunk.js",
+    "static/css/main.95ad90e0.chunk.css",
+    "static/js/main.41e6a256.chunk.js"
+  ]
+}
