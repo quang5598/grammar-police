@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/quang5598/grammar-police/precache-manifest.a8f81a0d97a9d98c56c02f197acfd25e.js"
+  "/quang5598/grammar-police/precache-manifest.982b6996b8e963b6480c7fe96ad5a652.js"
 );
 
 self.addEventListener('message', (event) => {

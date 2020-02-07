@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de2c842e2201366d87be24f76b04281c",
+    "revision": "e8e4f5796e705334350aef108e1949fb",
     "url": "/quang5598/grammar-police/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quang5598/grammar-police/static/css/2.eb45ad44.chunk.css"
   },
   {
-    "revision": "109675b69c1c95f4676f",
+    "revision": "d05ceb01b125251b73b3",
     "url": "/quang5598/grammar-police/static/css/main.95ad90e0.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quang5598/grammar-police/static/js/2.915a023b.chunk.js.LICENSE"
   },
   {
-    "revision": "109675b69c1c95f4676f",
-    "url": "/quang5598/grammar-police/static/js/main.41e6a256.chunk.js"
+    "revision": "d05ceb01b125251b73b3",
+    "url": "/quang5598/grammar-police/static/js/main.7bddc9fa.chunk.js"
   },
   {
     "revision": "f252076c3bc6d1fb92e0",
