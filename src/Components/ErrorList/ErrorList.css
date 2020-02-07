@@ -19,13 +19,14 @@
 
 .burn{
 	color: black;
-	font-size: 5em;
-	text-align: center;
-	font-family: "Brush Script MT";
-	  display: flex;
+	font-size: 30px;
+	font-style: italic;
+/*	text-align: center;
+*/	font-family: "Brush Script MT";
+/*	  display: flex;
   justify-content: center;
   align-items: center;
-}
+*/}
 
 .tooltip {
   position: relative;

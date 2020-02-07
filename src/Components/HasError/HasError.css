@@ -1,0 +1,10 @@
+.error {
+	text-decoration: underline;
+  text-decoration-color: red;
+
+}
+
+.error:hover {
+	background-color: red;
+	color: white;
+}

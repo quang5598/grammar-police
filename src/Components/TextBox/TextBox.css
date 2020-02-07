@@ -1,4 +1,4 @@
-.textarea {
+.textarea1 {
 	text-align: left;
 	height: 295px;
 	width: 100%;
@@ -6,4 +6,11 @@
 	letter-spacing: 1px;
 	font-family: "Times New Roman, Times, serif";
 	line-height: 1.6;
+	background-color: #E8E8E8;
+	resize: none;
+	border: none;
+	overflow: scroll;
+		overflow-y: auto;
+	overflow-x: auto;
+
 }

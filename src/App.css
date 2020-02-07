@@ -1,7 +1,11 @@
 .App {
   text-align: center;
-  
-
+}
+.alert {
+  float: right;
+  font-size: 2em;
+  text-align: center;
+  width:400px;
 }
 .wrapper {
     width: 100em;

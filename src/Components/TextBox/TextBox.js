@@ -1,16 +1,21 @@
+/*
+	Author: Quang Nguyen
+	Purpose: TextBok component will display the text field and get the user input.
+*/
+
 import React from 'react';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Grid from '@material-ui/core/Grid';
 import image1 from '../image1.jpg'
 import Hidden from '@material-ui/core/Hidden';
 import './TextBox.css'
 	const TextBox = ({handleTextEvent, errorList,textfield,text,onInput}) => {
 		return(
-		<div className='bb b--black-30'>
+		<div className='ba '>
 		<Grid container justify='center' wrap='wrap' >
 		
 		{
-			onInput? 
+			// Display input mode if onInput is true
+			onInput?
 			<Grid xs={8} >
 			<textarea  rows="4" cols="50" maxlength="50000"
 		style={{ float:'left',resize:'none',border: 'none',width:'100%', height:'295px'
@@ -18,12 +23,13 @@ import './TextBox.css'
 				fontFamily: 'Times New Roman, Times, serif',lineHeight:'1.6'}}
 				onChange ={handleTextEvent}
 				className=''
-				vallue={text}>
+				defaultValue ={text}
+				>
 		</textarea>
 		</Grid>
-		:
+		: // Otherwise, disable input mode
 		<Grid xs={8} >
-		<textarea className='textarea' value={text}></textarea></Grid>
+		<div  className='textarea1'>{text}</div></Grid>
 		}
 		
 		<Hidden mdDown>

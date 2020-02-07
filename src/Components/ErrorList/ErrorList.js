@@ -1,64 +1,53 @@
+/*
+	Author: Quang Nguyen
+	Purpose: Since React component doesn't render string content, The use of
+	 dangerouslySetInnerHTML is needed to convert the textfield input
+	to React Component
+
+*/
 import React from 'react';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import './ErrorList.css';
 import Grid from '@material-ui/core/Grid';
 import image2 from '../image2.jpg'
 import Hidden from '@material-ui/core/Hidden';
-import Tooltip from '@material-ui/core/Tooltip';
 import HasError from '../HasError/HasError';
-import reactStringReplace from 'react-string-replace';
-import Button from '@material-ui/core/Button';
-import convert from 'htmr';
 import parse from 'html-react-parser';
 
-const func = (match, index, offset) => <h1>{match}</h1>;
-
-// const transform = {
-//   p: HasError,
-
-//   // you can also pass string for native DOM node
-//   a: 'span',
-// };
 
 class ErrorList extends React.Component{
-	constructor(){
-		super();
-		this.myfunc = this.myfunc.bind(this);
-	}
-  componentDidMount() {
-    window.myfunc = null;
-  }
-  myfunc() {
-  	console.log('character');
-  }
 
+  
 	render(){
-
-		const {errorList,text,textfield,addNewText} = this.props;
-			let newArray = text.split('');
-	let newText = [];
-	let newObj = [];
-	let test = '';
+	const {errorList,text,addNewText} = this.props;
+	let newArray = text.split(''); // convert each character from the string to an array
+	let errorPosition = []; 
 	let count =0;
 
-	if(errorList.matches){
+		// If there's a error, push the offset and length from errorList
+		// to errorPosition array
+		if(errorList.matches){
 
-	errorList.matches.map((error,id) => {
-		newObj.push([error.offset,error.length])
-	})
-	}
+		errorList.matches.map((error,id) => {
+			errorPosition.push([error.offset,error.length])
+		})
+		}
 
-		newObj.map((array,index) => {
+		// For each error, add <span> element to that error 
+		errorPosition.map((array,index) => {
 		newArray.map((character,id) => {
 			if(id === array[0]){
 			
 			count++;
+			let replacements = errorList.matches[index].replacements.map(replace =>{
+				return replace.value
+			})
+			
 			newArray[id] = `<span 
 			id=${index}
 			error=${JSON.stringify(errorList.matches[index])}
-			word=${text.substring(array[0],array[0]+array[1])}
+			word=${text.substr(array[0],array[1])}
 			message=${JSON.stringify(errorList.matches[index].message.replace(/[^a-zA-Z .,?''/]/g, ""))}
-			replacements=${JSON.stringify(errorList.matches[index].replacements[0].value)}
+			replacements=${JSON.stringify(replacements.splice(0,5))}
 			rule=${JSON.stringify(errorList.matches[index].rule.issueType)}
 			description =${JSON.stringify(errorList.matches[index].rule.description)}
 			offset= ${JSON.stringify(array[0])}
@@ -68,31 +57,25 @@ class ErrorList extends React.Component{
 		} 
 		})
 	})	
-		let data = newArray.join("")
-		let data1= data.split(' ')
-		// let data = ReactHtmlParser(newArray.join(""))
-	 let inputhtml = "<a onclick=window.myfunc()>HelloWorld</a>";
+		// join newArray array and covert it to string
+		const data = newArray.join("")
 	return(
 
-		<div className='bb b--black-30'>
-
-		{
-			// reactStringReplace(data, /(span)/g, func)
-
-	
-		}
-
+		<div className='ba b--black-30'>
 		<Grid container justify='center' wrap='wrap' >
 		<Grid xs={8} >
 		{ 
-		text.length >0? 	
-			count===0 ? 
-			<div className ='textarea burn'>PERFECTION</div>
+		// check if the text input is not empty
+		text.length >0? 
+			// check if we receive any error, if not, no grammatical errors has been found
+			Object.entries(errorList).length ===0||count===0 ? 
+			<div className ='textarea burn'>{text}</div>
 			:
-			<div className='textarea'>{
-				// <div dangerouslySetInnerHTML={{ __html: data }} />
-				// convert(data, {transform})
+			// if we receive with an error, display the list of error.
+			<div className='textarea'>
 
+			{
+				// using dangerouslySetInnerHTML to convert data string to React component
 				parse(data, {
 			  replace: domNode => {
 			    if (domNode.attribs && domNode.name === 'span') {
@@ -110,14 +93,9 @@ class ErrorList extends React.Component{
 			    }
 		  }
 		})
-				
-				
-	
-
-	
-			}
+	}
 			</div>
-
+		// Display empty div field if the input field is empty
 		:
 		<div className='textarea'></div>
 			}
@@ -128,8 +106,6 @@ class ErrorList extends React.Component{
 	style={{float:'right',paddingLeft:'5px'}}/> 
 	</Grid>
 	</Hidden>
-	
-
 		</Grid>
         </div>
 		);
